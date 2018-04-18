@@ -1,0 +1,35 @@
+import java.io.*;
+/**
+ * Se leeran números separados por comas por consola. Posteriormente
+ * se imprime la serie de números ordenados de menor a mayor usando el 
+ * algoritmo de "Bubble Sort".
+ */
+
+/**
+ * @author Viviana Real
+ *
+ */
+/**
+ */
+public class BubbleSort {
+	/**
+	 * Función que ordenara el arreglo.
+	 * @param array = Arreglo de enteros que se recibe.
+	 */
+	public static void bubbleSort (int [] array) {
+		boolean swapped; //crea un booleano que dirá si hay"swap" o no.
+		int swap; //crea una variable auxiliar para realizar el cambio dentro del vector.
+		for (int i =0; i< array.length -1; i++) {
+			swapped = false; //Antes de que comience el ciclo, el booleano quedará en Falso.
+			for (int j= 0; j< array.length-1; j++) {
+				if (array[j] > array[j+1]) { //Si se cumple la condición se hace "swap".
+					swap = array [j];
+					array [j] = array [j+1];
+					array [j+1] = swap;
+					swapped = true; //Si no se entra en esta condición, el booleano quedará con el valor anterior (F).
+				}
+			}
+			if (!swapped) //Si el booleano sigue en falso, se rompe el ciclo.
+				break;	
+		}
+	}
